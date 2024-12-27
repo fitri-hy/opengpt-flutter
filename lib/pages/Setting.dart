@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SettingPage extends StatelessWidget {
-  Future<void> _launchGitHub() async {
-    const url = 'https://github.com/fitri-hy/';
+	
+  Future<void> _visitWebsite() async {
+    const url = 'https://i-as.dev/';
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -37,48 +38,33 @@ class SettingPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 20),
-              Center(
-                child: Text(
-                  'Open GPT',
-                  style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              SizedBox(height: 10),
-				Column(
-				  mainAxisAlignment: MainAxisAlignment.center,
-				  crossAxisAlignment: CrossAxisAlignment.center,
+			  Center(
+			  child: Column(
+				mainAxisAlignment: MainAxisAlignment.center,
 				  children: [
-					Center(
-					  child: Text(
-						'Version 1.0.0',
-						style: TextStyle(
-						  fontSize: 18,
-						  color: Colors.grey[800],
-						),
+				   Image.asset(
+					  'assets/logo.png',
+					  height: 80,
+				    ),
+				    SizedBox(height: 5),
+				    Text(
+					  'Open GPT',
+					  style: TextStyle(
+					    fontSize: 32,
+					    fontWeight: FontWeight.bold,
 					  ),
-					),
-					SizedBox(height: 10),
+				    ),
+				  ],
+			    ),
+			  ),
+				Column(
+				  children: [
 					Row(
 					  mainAxisAlignment: MainAxisAlignment.center,
 					  children: [
 						Text(
-						  'Developed By: ',
-						  style: TextStyle(fontSize: 18, color: Colors.grey[800]),
-						),
-						TextButton(
-						  onPressed: _launchGitHub,
-						  child: Text(
-							'Fitri HY',
-							style: TextStyle(
-							  fontSize: 18,
-							  color: Colors.blueAccent,
-							  decoration: TextDecoration.underline,
-							),
-						  ),
+						  'Made with ❤️ by Fitri HY',
+						  style: TextStyle(fontSize: 10),
 						),
 					  ],
 					),
@@ -95,12 +81,33 @@ class SettingPage extends StatelessWidget {
                     children: [
                       Text(
                         'Open GPT is an AI-powered text generation tool designed to generate high-quality text based on user input. Leverage its capabilities to create content effortlessly and enhance your productivity.',
-                        style: TextStyle(fontSize: 18),
+                        style: TextStyle(fontSize: 16),
                       ),
                     ],
                   ),
                 ),
               ),
+			  SizedBox(height: 10),
+				Row(
+				  mainAxisAlignment: MainAxisAlignment.center,
+				  children: [
+					ElevatedButton(
+					  onPressed: () {
+						_visitWebsite();
+					  },
+					  child: Text(
+						'Official Site',
+						style: TextStyle(
+						  color: Colors.white,
+						),
+					  ),
+					  style: ElevatedButton.styleFrom(
+						padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+						backgroundColor: Colors.blue,
+					  ),
+					),
+				  ],
+				),
             ],
           ),
         ),

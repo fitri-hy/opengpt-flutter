@@ -17,6 +17,7 @@ class _Feature13State extends State<Feature13> {
 
   Future<void> _getAnswer() async {
     setState(() {
+	  _answer = '';
       _isLoading = true;
       _showRekomendasi = false;
     });
