@@ -11,7 +11,9 @@ class Config {
     'claude-3-sonnet-20240229',
     'claude-3-5-sonnet-20240620',
     'claude-3-5-sonnet-20241022',
+    'claude-3-5-sonnet-20241022-t',
     'gemini-1.5-flash-exp-0827',
+    'gemini-1.5-pro-exp-0827'
   ];
 
   static String get baseUrl => _baseUrl;
